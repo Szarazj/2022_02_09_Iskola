@@ -25,5 +25,18 @@ namespace IskolaGUI
                 listBox1.Items.Add(sor);
             }
         }
+
+        private void btnTörlés_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Nem jelölt ki tanulót!" , "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            }
+
+        }
     }
 }
