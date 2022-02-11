@@ -38,5 +38,44 @@ namespace IskolaGUI
             }
 
         }
+
+        private void btnMentés_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamWriter streamWriter = new StreamWriter("c:\\valami\\nevekNEW.txt");
+
+                foreach (var sor in listBox1.Items)
+                {
+                    streamWriter.WriteLine(sor);
+
+                }
+                streamWriter.Close();
+                MessageBox.Show("Sikeres mentés!");
+            }
+            catch (Exception hiba)
+            {
+                MessageBox.Show(hiba.Message);
+            }
+
+
+
+
+
+
+
+
+
+
+            StreamWriter sw = new StreamWriter("nevekNEW.txt");
+
+            foreach (var sor in listBox1.Items)
+            {
+                sw.WriteLine(sor);
+               
+            }
+            sw.Close();
+            MessageBox.Show("Sikeres mentés!");
+        }
     }
 }
